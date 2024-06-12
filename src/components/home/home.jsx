@@ -40,7 +40,7 @@ function Home(){
             <div className="container">
                 <div className="row">
                     <div className="col-12 text-center loopingpara train">
-                        <p>"Top-Rated Indian Tourist Spots by WaaawTech"</p>
+                        <p>"Top-Rated Indian Tourist Spots"</p>
                     </div>
                 </div>
 
@@ -53,7 +53,7 @@ function Home(){
                         <div className="col-lg-6 col-md-12 text-center">
                             <h3 className="clr">The aim of our brand to make multiple tourist spots  pet friendly!</h3>
                             <p>At WaaawTech, we are dedicated to transforming the travel experience for pet lovers across India. Our mission is to identify and collaborate with a multitude of tourist spots, ensuring they become welcoming and comfortable for pets and their owners. We believe that a memorable holiday should include every member of the family, including our furry friends. Through our extensive network and expertise, we strive to promote and enhance pet-friendly facilities, making it easier for travelers to find the perfect getaway where pets are not only allowed but celebrated. Join us in our journey to make travel more inclusive and enjoyable for all.Sign up to enjoy our privileges every time you holiday with us.</p>
-                            <Link to ='/booking'><button className="btn btnhome clr">Book Now</button></Link>
+                            <Link to ='/booking'><button className="btnhome ">Book Now</button></Link>
                         </div>
                     </div>
 
@@ -62,7 +62,7 @@ function Home(){
                             <h3 className="clr">We find hidden tourist spots and ensure they are safe for our travelers.</h3>
                             <p>
                             At WaaawTech, our passion lies in discovering the unexplored and hidden tourist spots across India. We take great pride in offering unique travel experiences that go beyond the usual destinations. Our dedicated team meticulously assesses each location to ensure it meets our stringent safety standards, providing peace of mind for our travelers. By prioritizing safety and comfort, we aim to create unforgettable journeys that are both adventurous and secure. Whether it's a secluded beach, a serene hill station, or a quaint village, we guarantee that every destination we recommend has been thoroughly vetted for your enjoyment and safety..</p>
-                            <Link  to = '/booking'><button className="btn btnhome">Book Now</button></Link>
+                            <Link  to = '/booking'><button className="btnhome">Book Now</button></Link>
                         </div>
                         <div className="col-lg-6 col-md-12 mt-2">
                             <img src={homeexp2} className="img-fluid se" />

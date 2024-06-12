@@ -18,7 +18,7 @@ function Allfeedback() {
 
     return (
         <div className="container mt-4">
-            <h1 className="text-center ">Feedbacks</h1>
+            <h1 className="text-center clr">Feedbacks</h1>
             <div className="table-responsive">
                 <table className="table table-striped table-bordered">
                     <thead className="thead-dark">

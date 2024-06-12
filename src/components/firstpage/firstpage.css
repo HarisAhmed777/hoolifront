@@ -1,0 +1,106 @@
+.homefirst {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(rgba(12, 2, 50, 0.3), rgba(12, 2, 50, 0.3));
+    position: relative;
+    padding-top: 80px; /* To avoid overlap with the fixed navbar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flogo {
+    height: 50px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    margin-right: 20px;
+    font-size: 20px;
+    
+    /* background-color: rgba(0, 0, 0, 0.5); Optional: to make navbar background semi-transparent */
+}
+
+.fcontent {
+    text-align: center;
+}
+
+.fcontent h1 {
+    font-size: 4vw;
+    /* color: white; */
+    font-weight: 500;
+}
+.nav-item a{
+    color: white;
+    margin-left: 30px;
+}
+.fcontent button {
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    font-size: 1.5vw;
+    border: 2px solid #fff;
+    padding: 10px 40px;
+    border-radius: 50px;
+    margin-top: 20px;
+}
+
+.fvid {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .fvid {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .fvid {
+        width: auto;
+        height: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .fcontent h1 {
+        font-size: 3.5vw;
+    }
+    .fcontent button {
+        font-size: 1.8vw;
+        padding: 12px 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .fnav ul li {
+        margin-left: 20px;
+    }
+    .fcontent h1 {
+        font-size: 6vw;
+    }
+    .fcontent button {
+        font-size: 3vw;
+        padding: 10px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fnav ul li {
+        margin-left: 10px;
+    }
+    .fcontent h1 {
+        font-size: 8vw;
+    }
+    .fcontent button {
+        font-size: 4vw;
+        padding: 8px 20px;
+    }
+}

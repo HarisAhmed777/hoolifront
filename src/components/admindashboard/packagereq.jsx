@@ -20,7 +20,7 @@ function Packagereq() {
 
     return (
         <div className='container mt-4'>
-            <h1 className="text-center mb-4">The Package Requests are:</h1>
+            <h1 className="text-center mb-4 clr">The Package Requests are:</h1>
             <div className="table-responsive">
                 <table className="table table-striped table-bordered">
                     <thead className="thead-dark">

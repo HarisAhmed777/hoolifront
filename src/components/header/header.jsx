@@ -43,7 +43,7 @@ function Header() {
     setIsAuthorized(false);
     setUser({});
     localStorage.removeItem('jwtToken');
-    navigate('/');
+    navigate('/home');
   };
 
   const handleItemClick = (item) => {
@@ -83,7 +83,7 @@ function Header() {
       <div className={styles.bottomBar}>
         <div className={styles.bottomBarContent}>
           <a href="#" className={styles.logo}>
-          <Link to="/"> <img className={styles.logoImg} src={Logo} alt="logo" /></Link>
+          <Link to="/home"> <img className={styles.logoImg} src={Logo} alt="logo" /></Link>
           </a>
           <nav className={styles.nav}>
             <ul className={styles.navList}>
@@ -98,7 +98,7 @@ function Header() {
                 </>
               )}
               <li className={classNames(styles.navItem, { [styles.active]: activeItem === 'home' })} onClick={() => handleItemClick('home')}>
-                <Link to="/">Home</Link>
+                <Link to="/home">Home</Link>
               </li>
               <li className={classNames(styles.navItem, { [styles.active]: activeItem === 'packages' })} onClick={() => handleItemClick('packages')}>
                 <Link to="/package">Packages</Link>

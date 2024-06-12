@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './feedback.css';
 import { baseUrl } from '../../url';
+import feebackbg from '../../images/feebackbg.jpeg';
+
 function Feedback() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -28,9 +30,10 @@ function Feedback() {
     };
 
     return (
-        <>
-            <h1 className="text-center">Feedback</h1>
-            <div className="feedback-container">
+        <div className="feedback-container">
+            <img src={feebackbg} alt="Background" className="background-image" />
+            <div className="content-container">
+                <h1 className="text-center">Feedback</h1>
                 <form onSubmit={handleSubmit}>
                     <input
                         type="text"
@@ -56,7 +59,7 @@ function Feedback() {
                     <button className="btn-feedback" type="submit">Submit</button>
                 </form>
             </div>
-        </>
+        </div>
     );
 }
 

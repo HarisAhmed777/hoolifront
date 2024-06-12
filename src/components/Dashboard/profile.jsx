@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../../content';
 import './profile.css';
-import { faPen } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { baseUrl } from '../../url';
+import profile from '../../images/profile.jpg'; // Importing the profile image
 
 function Profile() {
     const [data, setData] = useState(null);
@@ -21,8 +20,8 @@ function Profile() {
     }, [user]);
 
     return (
-        <div className='profile-container prop'>
-            <h1 className='profile-header '>Your Profile</h1>
+        <div className='profile-container prop' style={{ backgroundImage: `url(${profile})` }}>
+            <h1 className='profile-header text-white'>Your Profile</h1>
             {data ? (
                 <div key={data._id} className='profile-item row'>
                     <p>
@@ -37,7 +36,7 @@ function Profile() {
                         <span className='profile-label'>Mobile Number:</span>
                         <span className='profile-value d-inline'>{data.mobilenumber}</span>
                     </p>
-                    <p className='col-12 '>
+                    <p className='col-12'>
                         <span className='profile-label'>Email:</span>
                         <span className='profile-value d-inline em'>{data.email}</span>
                     </p>

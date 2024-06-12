@@ -48,11 +48,11 @@ function PackagePurchase () {
   return (
     <>
     <div className='text-center'>
-      <h1>Package Details</h1>
+      <h1 className='clr'>Package Details</h1>
       <img src={purpack} alt=""  className='purimg'/>
     </div>
     <div>
-      <h1 className='text-center'>TERMS AND CONDITION</h1>
+      <h1 className='text-center clr'>TERMS AND CONDITION</h1>
       <p className='container'><b>Bookings and Payments</b><br/>
         Booking Process: All bookings must be made through our website or authorized booking platforms.
 Payment: Full payment must be made at the time of booking unless otherwise specified. We accept various payment methods, including credit/debit cards and online payment systems.

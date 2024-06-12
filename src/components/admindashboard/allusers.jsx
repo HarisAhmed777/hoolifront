@@ -19,7 +19,7 @@ function Allusers() {
 
     return (
         <div className="container mt-4">
-            <h1 className="text-center mb-4">All Users</h1>
+            <h1 className="text-center mb-4 clr">All Users</h1>
             <div className="table-responsive">
                 <table className="table table-striped table-bordered">
                     <thead className="thead-dark">
