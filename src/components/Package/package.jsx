@@ -1,7 +1,5 @@
 import React from "react";
 import './package.css';
-import Header from '../header/header';
-import offone from '../../images/offermain.jpg';
 import { Link } from 'react-router-dom';
 import honey from '../../images/honey.jpg';
 import adventure from '../../images/adventure.jpg';
@@ -30,7 +28,7 @@ function Package() {
                 <img src={concert} alt="" className="packmainimg" />
             </div>
             <div className="mt-4">
-                <h5 className="text-center packh5 mb-3">PACKAGES</h5>
+                <h5 className="text-center packh5 mb-3 clr">PACKAGES</h5>
             </div>
             <div className="container">
                 <div className="row">

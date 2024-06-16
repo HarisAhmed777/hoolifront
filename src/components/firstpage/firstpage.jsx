@@ -1,14 +1,12 @@
 import React from "react";
 import './firstpage.css';
 import { Link } from "react-router-dom";
-import homevid from '../../images/homevid.mp4';
 import Logo from '../../images/Logo.png';
 
 function Firstpage() {
     return (
         <>
             <div className="homefirst">
-                <video autoPlay loop muted playsInline src={homevid} type="video/mp4" className="fvid"></video>
                 <nav className="navbar navbar-expand-lg navbar-light">
                     <div className="container-fluid">
                         <a className="navbar-brand" href="#">
@@ -19,25 +17,33 @@ function Firstpage() {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav ms-auto">
-                               <Link to ='/home'> <li className="nav-item">
-                                    <a className="nav-link"  href="#">Home</a>
-                                </li></Link>
-                                <Link to ='/offer'><li className="nav-item">
-                                    <a className="nav-link" href="#">Offers</a>
-                                </li></Link>
-                                <Link to = '/package'><li className="nav-item">
-                                    <a className="nav-link" href="#">Packages</a>
-                                </li></Link>
-                               <Link to ='/login'> <li className="nav-item">
-                                    <a className="nav-link" href="#">Login</a>
-                                </li></Link>
+                                <Link to='/home'>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">Home</a>
+                                    </li>
+                                </Link>
+                                <Link to='/offer'>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">Offers</a>
+                                    </li>
+                                </Link>
+                                <Link to='/package'>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">Packages</a>
+                                    </li>
+                                </Link>
+                                <Link to='/login'>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">Login</a>
+                                    </li>
+                                </Link>
                             </ul>
                         </div>
                     </div>
                 </nav>
                 <div className="fcontent">
-                    <h1 className="text-white">Start Planning Your Holidays With Us</h1>
-                    <Link to ='/home'><button className="btn">Explore Now</button></Link>
+                    <h1 className="fcontenth1">Start Planning Your Holidays With Us</h1>
+                    <Link to='/home'><button className="btn">Explore Now</button></Link>
                 </div>
             </div>
         </>

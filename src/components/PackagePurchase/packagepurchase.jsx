@@ -1,9 +1,11 @@
 import React from 'react';
-import Header from '../header/header';
 import { useState } from 'react';
 import purpack from '../../images/packenq.png';
 import './packagepurchase.css'; 
 import { baseUrl } from '../../url';
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+
 function PackagePurchase () {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -12,6 +14,7 @@ function PackagePurchase () {
   const [numberOfAdults, setNumberOfAdults] = useState('');
   const [numberOfChildren, setNumberOfChildren] = useState('');
   const [packageType, setPackageType] = useState('');
+
 
   const handleSubmit = async (e) => {
       e.preventDefault();
@@ -49,7 +52,7 @@ function PackagePurchase () {
     <>
     <div className='text-center'>
       <h1 className='clr'>Package Details</h1>
-      <img src={purpack} alt=""  className='purimg'/>
+      <imd src={purpack} alt=""  className='purimd'/>
     </div>
     <div>
       <h1 className='text-center clr'>TERMS AND CONDITION</h1>
@@ -73,47 +76,48 @@ Company-Initiated Changes: In rare circumstances, we may need to make changes to
                     <input
                         type='text'
                         placeholder='Enter your first name'
-                        className='col-12 col-lg-6 col-mg-12'
+                        className='col-12 col-lg-6 col-md-12'
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
                     />
                     <input
                         type='text'
                         placeholder='Enter your last name'
-                        className='col-12 col-lg-6 col-mg-12'
+                        className='col-12 col-lg-6 col-md-12'
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
                     />
-                    <input
-                        type='text'
-                        placeholder='Enter your mobile number'
-                        className='col-12 col-lg-6 col-mg-12'
-                        value={mobileNumber}
-                        onChange={(e) => setMobileNumber(e.target.value)}
-                    />
+                    <PhoneInput
+                  country={'in'}
+                  value={mobileNumber}
+                  onChange={setMobileNumber}
+                  inputClass="col-12 col-lg-6 col-md-12 mob"
+                  specialLabel=""
+                  countryCodeEditable={false}
+                />
                     <input
                         type='email'
                         placeholder='Enter your email id'
-                        className='col-12 col-lg-6 col-mg-12'
+                        className='col-12 col-lg-6 col-md-12'
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                     <input
                         type='number'
                         placeholder='Enter no. of adults'
-                        className='col-12 col-lg-6 col-mg-12'
+                        className='col-12 col-lg-6 col-md-12'
                         value={numberOfAdults}
                         onChange={(e) => setNumberOfAdults(e.target.value)}
                     />
                     <input
                         type='number'
                         placeholder='Enter no. of children'
-                        className='col-12 col-lg-6 col-mg-12'
+                        className='col-12 col-lg-6 col-md-12'
                         value={numberOfChildren}
                         onChange={(e) => setNumberOfChildren(e.target.value)}
                     />
                     <select
-                        className='text-dark col-12 col-lg-6 col-mg-12'
+                        className='text-dark col-12 col-lg-6 col-md-12'
                         value={packageType}
                         onChange={(e) => setPackageType(e.target.value)}
                     >

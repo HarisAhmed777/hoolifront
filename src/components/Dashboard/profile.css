@@ -1,5 +1,16 @@
-.prop {
+ .bbody {
+    background-image: url('../../images/profile.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+
+ }
+.prop { 
     height: 70vh;
+    width: 100%;
 }
 
 .profile-container {
@@ -13,56 +24,71 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    background-size: cover;
-    background-position: center;
+    color: white;
 }
 
 .profile-header {
     text-align: center;
     margin-bottom: 20px;
     font-size: 24px;
-    color: #333;
+    color: white;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .profile-item {
-    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 10px;
-    border-bottom: 1px solid #ddd;
     background: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
 }
 
-.profile-item:last-child {
-    border-bottom: none;
-}
-
-.profile-label {
+.profile-item label {
     font-weight: bold;
     color: #555;
 }
 
-.profile-value {
+.profile-item input {
     margin-left: 10px;
     color: #666;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 60%;
 }
 
-.profile {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.profile-item button {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
 }
 
-.profile-item p {
-    margin: 5px 0;
+.profile-item button:disabled {
+    cursor: not-allowed;
+    color: #ccc;
 }
 
-.profile-item span {
-    display: inline-block;
-    width: 150px;
+.profile-item input:disabled {
+    background: #f9f9f9;
 }
 
-@media (max-width: 500px) {
-    .em {
-        font-size: 12.5px;
-    }
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }

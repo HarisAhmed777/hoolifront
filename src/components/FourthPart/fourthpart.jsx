@@ -186,7 +186,7 @@ function Fourthpart() {
                 </div>
             </div>
             <div className='fifthpart text-center mt-5'>
-                <Link to='/booking'><button className='btnbook text-center'>Book Now</button></Link>
+                <Link to='/booking'><button className='btn btnbook text-center'>Book Now</button></Link>
                 <h3 className='mt-3 clr'>To Enjoy a picnic at nature trails</h3>
                 <hr></hr>
             </div>

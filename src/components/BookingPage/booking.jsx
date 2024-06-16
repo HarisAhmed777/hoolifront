@@ -5,6 +5,12 @@ import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Context } from "../../content";
 import { baseUrl } from "../../url";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Booking() {
   const location = useLocation();
@@ -18,18 +24,20 @@ function Booking() {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [persons, setPersons] = useState("");
-  const [startdate, setStartdate] = useState("");
-  const [enddate, setEnddate] = useState("");
+  const [startdate, setStartdate] = useState(new Date());
+  const [enddate, setEnddate] = useState(new Date());
   const [adults, setAdults] = useState(0);
   const [children, setChildren] = useState(0);
+  const [mobile, setMobile] = useState("");
   const navigate = useNavigate();
 
-  const handleStartDateChange = (e) => {
-    setStartdate(e.target.value);
+  const handleStartDateChange = (date) => {
+    setStartdate(date);
+    setEnddate(date);
   };
 
-  const handleEndDateChange = (e) => {
-    setEnddate(e.target.value);
+  const handleEndDateChange = (date) => {
+    setEnddate(date);
   };
 
   const calculateDays = () => {
@@ -58,19 +66,21 @@ function Booking() {
       enddate,
       adults,
       children,
+      mobile,
       totalamount: calculatetotalamount(),
     };
     try {
       const response = await axios.post(`${baseUrl}/booking`, bookingData);
       if (response.data.status === "ok") {
-        alert("Booking confirmed successfully");
-        navigate('/');
+        toast.success("Booking confirmed successfully,See Dashboard", { autoClose: 3000 });
+        setTimeout(() => {
+          navigate('/home');
+        }, 1000);
       } else {
-        alert("Booking failed");
+        toast.error("Try again later  ");
       }
     } catch (error) {
-      console.error("There was an error making the booking request:", error);
-      alert("Booking failed");
+      toast.error("Please Login and try again");
     }
   };
 
@@ -111,7 +121,7 @@ function Booking() {
                 <label className="text-white">Enter how many adults</label>
                 <select className="select-control-booking" value={adults} onChange={(e) => setAdults(Number(e.target.value))}>
                   {[...Array(11).keys()].map(num => (
-                    <option key={num} value={num}>{num}</option>
+                    <option key={num} value={num} className="clcc">{num}</option>
                   ))}
                 </select>
               </div>
@@ -119,20 +129,45 @@ function Booking() {
                 <label className="text-white">Enter how many children</label>
                 <select className="select-control-booking" value={children} onChange={(e) => setChildren(Number(e.target.value))}>
                   {[...Array(11).keys()].map(num => (
-                    <option key={num} value={num}>{num}</option>
+                    <option key={num} value={num} className="clcc">{num}</option>
                   ))}
                 </select>
               </div>
             </div>
-
             <div className="form-group">
               <label className="text-white">Start Date:</label>
-              <input type="date" className="form-control-booking" value={startdate} onChange={handleStartDateChange} required />
+              <DatePicker
+                selected={startdate}
+                onChange={handleStartDateChange}
+                className="form-control-booking"
+                minDate={new Date()}
+                required
+              />
             </div>
 
             <div className="form-group">
               <label className="text-white">End Date:</label>
-              <input type="date" className="form-control-booking" value={enddate} onChange={handleEndDateChange} required />
+              <DatePicker
+                selected={enddate}
+                onChange={handleEndDateChange}
+                className="form-control-booking"
+                minDate={startdate}
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label className="text-white ">Mobile Number:</label>
+              <div className="phone-input-container d-inline">
+                <PhoneInput
+                  country={'in'}
+                  value={mobile}
+                  onChange={setMobile}
+                  inputClass="form-control-booking bg-dark text-white"
+                  specialLabel=""
+                  countryCodeEditable={false}
+                />
+              </div>
             </div>
 
             <div className="text-center">
@@ -145,6 +180,7 @@ function Booking() {
           </form>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 }
