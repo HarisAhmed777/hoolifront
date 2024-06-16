@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { Context } from "../../content";
 import './login.css';
 import { baseUrl } from "../../url";
-import { Link } from "react-router-dom";
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -47,7 +46,6 @@ function Login() {
                 <input className='form-control-both' onChange={(e) => setPassword(e.target.value)} placeholder='Password' type='password' />
                 {error && <p className="error-messagelogin text-danger">{error}</p>} 
                 <button className='btn-login'>LOGIN</button>
-                <Link to = '/forgotpassword'><p>Forgot passowed?</p></Link>
             </form>
         </div>
     );
