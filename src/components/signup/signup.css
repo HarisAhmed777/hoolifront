@@ -62,7 +62,7 @@
     color: #ff4d4d;
 }
 
-@media (max-width: 350px) {
+@media (max-width: 380px) {
     .signup-container {
         width: 100%;
         padding: 10px;
