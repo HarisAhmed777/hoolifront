@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Context } from "../../content";
 import './login.css';
 import { baseUrl } from "../../url";
@@ -46,6 +46,7 @@ function Login() {
                 <input className='form-control-both' onChange={(e) => setPassword(e.target.value)} placeholder='Password' type='password' />
                 {error && <p className="error-messagelogin text-danger">{error}</p>} 
                 <button className='btn-login'>LOGIN</button>
+                <Link to ="/forgotpassword"><p>Forgot Password</p></Link>
             </form>
         </div>
     );

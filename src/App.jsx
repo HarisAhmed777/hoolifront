@@ -22,6 +22,8 @@ import Allbookings from './components/admindashboard/allbookings';
 import Allfeedback from './components/admindashboard/allfeedback';
 import Packagereq from './components/admindashboard/packagereq';
 import Firstpage from './components/firstpage/firstpage';
+import ForgotPassword from './components/Loginandsignup/Forgotpassword';
+import ResetPassword from './components/Loginandsignup/ResetPassword';
 
 function App() {
   const location = useLocation();
@@ -38,6 +40,7 @@ function App() {
             <Route path="/" element={<Firstpage />} />
             <Route path="/home" element={<Home />} />
             <Route path="/login" element={<LoginRedirect />} />
+            <Route path="/forgotpassword" element={<ForgotPassword/>} />
             <Route path="/offer" element={<Offer />} />
             <Route path="/package" element={<Package />} />
             <Route path="/packagepurchase" element={<PackagePurchase />} />
@@ -51,6 +54,7 @@ function App() {
             <Route path="/allbookings" element={<Allbookings />} />
             <Route path="/allfeedback" element={<Allfeedback />} />
             <Route path="/allpackagereq" element={<Packagereq />} />
+            <Route path="/resetpassword/:_id/:token" element={<ResetPassword/>} />
           </Routes>
         </div>
         {!isFirstPage && !isLoginPage && <Footer />}
