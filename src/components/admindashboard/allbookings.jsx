@@ -26,6 +26,7 @@ function Allbookings() {
                             <th>Name</th>
                             <th>Age</th>
                             <th>Persons</th>
+                            <th>City</th>
                             <th>Adults</th>
                             <th>Children</th>
                             <th>Start Date</th>
@@ -38,6 +39,7 @@ function Allbookings() {
                                 <td>{value.name}</td>
                                 <td>{value.age}</td>
                                 <td>{value.persons}</td>
+                                <td>{value.city}</td>
                                 <td>{value.adults}</td>
                                 <td>{value.children}</td>
                                 <td>{new Date(value.startdate).toLocaleDateString()}</td>
