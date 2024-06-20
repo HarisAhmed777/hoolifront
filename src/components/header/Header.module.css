@@ -33,8 +33,8 @@
   }
   
   .topBar {
-    background-color:blue;
-    color: lime;
+    background-color:#ced5db;
+    color:black;
   }
   
   .topBarContent {
@@ -55,7 +55,7 @@
   }
   
   .bottomBar {
-    background-color:aqua;
+    background-color:#ced5db;
   }
   
   .bottomBarContent {
@@ -111,11 +111,12 @@
  }
   
   .btn {
-    color:lime;
-    background-color: purple;
+    color:black;
+    background-color: orangered;
     padding: 8px 20px;
-    border-radius: 1000px;
+    /* border-radius: 1000px; */
     text-transform: uppercase;
+    border-radius: 20px;
     font-size: 12px;
     font-weight: 500;
     cursor: pointer;
@@ -206,15 +207,18 @@
   }
   
   @media (max-width: 650px) {
+    .bottomBar {
+      color:#ced5db;
+    }
     .nav {
       position: fixed;
       top: 90px;
       left: -100%;
       transform: translateX(-50%);
-      background-color: rgb(90, 29, 232);
+      background-color: black;
+      color: white !important;
       width: 100%;
       padding: 10px 0 25px;
-      color: #e8f0f7 !important;
     }
 
 
@@ -223,12 +227,13 @@
       flex-direction: column;
       align-items: center;
       row-gap: 20px;
-      color: #fff !important;
+      color: white !important;
+
     }
   
     .navLink {
       font-size: 14px;
-      color: #fff !important;
+      color: white !important;
 
     }
   
@@ -252,6 +257,9 @@
     .navList{
       color: white;
     }
+    .navItem{
+      color: white;
+    }
   }
   @media (min-width :400px ) and (max-width:500px) {
     .logoImg {
@@ -263,6 +271,8 @@
     @media (min-width: 769px) {
       .navItem .dropdownMenu {
         display: block;
+      color: white !important;
+
       }
     }
   }

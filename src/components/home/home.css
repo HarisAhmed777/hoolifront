@@ -3,7 +3,7 @@
 
 .train {
     animation: moveTrain 15s linear infinite;
-    background-color:slateblue;
+    background-color:#9c0bf7;
     color: white;
     height: 25px;
     border-radius: 20px;
