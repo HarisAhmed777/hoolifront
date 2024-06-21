@@ -46,7 +46,7 @@ function Login() {
                 <input className='form-control-both' onChange={(e) => setPassword(e.target.value)} placeholder='Password' type='password' />
                 {error && <p className="error-messagelogin text-danger">{error}</p>} 
                 <button className='btn-login'>LOGIN</button>
-                <Link to ="/forgotpassword"><p>Forgot Password</p></Link>
+                {/* <Link to ="/forgotpassword"><p>Forgot Password</p></Link> */}
             </form>
         </div>
     );
