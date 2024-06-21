@@ -24,7 +24,7 @@ import Packagereq from './components/admindashboard/packagereq';
 import Firstpage from './components/firstpage/firstpage';
 import ForgotPassword from './components/Loginandsignup/Forgotpassword';
 import ResetPassword from './components/Loginandsignup/ResetPassword';
-
+import { jwtDecode } from "jwt-decode";
 function App() {
   const location = useLocation();
 
@@ -40,7 +40,7 @@ function App() {
             <Route path="/" element={<Firstpage />} />
             <Route path="/home" element={<Home />} />
             <Route path="/login" element={<LoginRedirect />} />
-            <Route path="/forgotpassword" element={<ForgotPassword/>} />
+            <Route path="/forgotpassword" element={<ForgotPassword />} />
             <Route path="/offer" element={<Offer />} />
             <Route path="/package" element={<Package />} />
             <Route path="/packagepurchase" element={<PackagePurchase />} />
@@ -54,7 +54,7 @@ function App() {
             <Route path="/allbookings" element={<Allbookings />} />
             <Route path="/allfeedback" element={<Allfeedback />} />
             <Route path="/allpackagereq" element={<Packagereq />} />
-            <Route path="/resetpassword/:_id/:token" element={<ResetPassword/>} />
+            <Route path="/resetpassword/:_id/:token" element={<ResetPassword />} />
           </Routes>
         </div>
         {!isFirstPage && !isLoginPage && <Footer />}
@@ -73,16 +73,25 @@ function RootApp() {
 
 function LoginRedirect() {
   const navigate = useNavigate();
-  const { isAuthorized, setIsAuthorized,user,setUser } = useContext(Context);
+  const { isAuthorized, setIsAuthorized, setUser } = useContext(Context);
 
   useEffect(() => {
     const token = localStorage.getItem('jwtToken');
     if (token) {
-      setIsAuthorized(true);
-      setUser(user);
-      navigate('/home');
+      try {
+        const decoded = jwtDecode(token);
+        if (decoded && decoded.email) {
+          setIsAuthorized(true);
+          setUser(decoded.email);  // Assuming the token contains the email
+          navigate('/home');
+        } else {
+          throw new Error('Token does not contain email');
+        }
+      } catch (error) {
+        console.error('Token is invalid or expired', error);
+      }
     }
-  }, [isAuthorized, setIsAuthorized, navigate]);
+  }, [setIsAuthorized, setUser, navigate]);
 
   return <Both />;
 }

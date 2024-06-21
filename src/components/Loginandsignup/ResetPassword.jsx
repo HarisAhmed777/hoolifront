@@ -10,10 +10,21 @@ const ResetPassword = () => {
     const [success, setSuccess] = useState('');
     const navigate = useNavigate();
 
+    const validatePassword = (password) => {
+        const regex = /^(?=.*\d).{6,}$/;
+        return regex.test(password);
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+
         if (password !== confirmPassword) {
             setError("Passwords do not match!");
+            return;
+        }
+
+        if (!validatePassword(password)) {
+            setError("Password must be at least 6 characters long and contain at least one number.");
             return;
         }
 
