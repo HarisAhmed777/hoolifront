@@ -7,6 +7,9 @@ import homemain3 from '../../images/homemain3.jpg';
 import homeexp1 from '../../images/homeexp1.jpg';
 import homeexp2 from '../../images/homeexp2.jpg';
 import homeimgfour from '../../images/homeimgfour.jpg';
+import Homeimg from "../Homeimg/homeimg";
+import Custompackages from "../CustomPackages/custompackages";
+import Picnicpackages from "../Picnichomepage/Picnichomepage";
 
 
 
@@ -15,7 +18,7 @@ import homeimgfour from '../../images/homeimgfour.jpg';
 function Home(){
     return(
         <>
-        <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
+        {/* <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active coroit">
                         <img src={homemain3} className="d-block homemainimg  w-100 caroimg" alt="Dehradun Banner" />
@@ -35,15 +38,15 @@ function Home(){
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
                 </button>
-            </div>
-
+            </div> */}
+            <Homeimg/>
             <div className="container">
                 <div className="row">
                     <div className="col-12 text-center loopingpara train">
                         <p>"Top-Rated Indian Tourist Spots"</p>
                     </div>
                 </div>
-
+            <Custompackages/>
                 <div>
                     <h1 className="text-center mt-2 mb-4 clr">Our  Experience</h1>
                     <div className="row mt-2">
@@ -69,6 +72,7 @@ function Home(){
                         </div>
                     </div>
                 </div>
+                <Picnicpackages/>
 
                 <div>
                     <h2 className="text-center mt-5 clr">MEETINGS AND EVENTS</h2>
